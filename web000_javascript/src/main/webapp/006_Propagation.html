@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전파 방지</title>
+<style type="text/css">
+a {
+	text-decoration: none;
+}
+
+img {
+	vertical-align: middle;
+}
+
+a>img {
+	width: 50px;
+	height: 50px;
+}
+
+div#gallaryWarp {
+	width: 600px;
+	margin: 100px auto;
+}
+
+</style>
+<script type="text/javascript" src="./js/js_006.js"></script>
+
+</head>
+<body>
+	<div id="gallaryWarp">
+		<p>
+			<a href="http://www.naver.com" onclick="return prevGallary()"> 
+				<img alt="left"		src="./img/left.png">
+			</a> 
+			
+				<img alt="포켓몬 진화" id="gallary" src="./img/img01.png">
+			
+			<a	href="http://www.google.com" onclick="return nextGallary()"> 
+				<img alt="right" src="./img/right.png">
+				<!-- js에서 return false 했으므로, onclick="return nextGallary()"=> false가 돼서 앞뒤로 가지 않음(막힘) -->
+			</a>
+		</p>
+	</div>
+	
+	<fieldset>
+		<legend>이벤트 생성</legend>
+		<ul>
+			<!-- 3가지 방법: 다 똑같음 -->
+			<li onclick="click01(event)">HTML의 속성 onclick</li>
+			<!-- click01(event): 이벤트의 모든 애들이 들어있음 -->
+			<li id="domClick">Dom 탐색을 사용</li>
+			<li id="addEvent">addEventListener 사용</li>
+		</ul>
+	</fieldset>
+	
+	<script type="text/javascript">
+		document.getElementById("domClick").onclick=function(event){
+														console.log(event);
+		}
+	</script>
+	
+	<fieldset>
+		<legend>HTML 속성 이벤트 방지</legend>
+		<!-- prepagation 앵커 태그 url로 안감 -->
+		<a href="http://naver.com" id="otherLink">링크를 연결합니다.</a>
+	</fieldset>
+	<script type="text/javascript">
+		const otherLink=document.getElementById("otherLink");
+		otherLink.addEventListener('click',function(e){
+			e.preventDefault();
+			console.log("A 태그의 링크를 막았습니다.");
+		});
+	</script>
+</body>
+</html>

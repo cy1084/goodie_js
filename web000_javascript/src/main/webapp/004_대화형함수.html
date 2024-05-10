@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>대화형 함수</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css" rel="stylesheet">
+<script type="text/javascript" src="./js/js_004.js"></script>
+</head>
+<body>
+	<p>대화형 함수의 종류: alert(), prompt(), confirm()</p>
+	<p>
+		alert(): <input type="button" value="alert 실행" onclick="alertTest()">
+	</p>
+	<p>
+		prompt(): <input type="button" value="prompt 실행"
+			onclick="promptTest()">
+	</p>
+	<p>
+		confirm(): <input type="button" value="confirm 실행"
+			onclick="confirmTest()">
+	</p>
+	<p>
+		javascript 라이브러리 사용하기(sweetalert2)
+		<button onclick="swalTest()">sweetalert</button>
+	</p>
+
+	<fieldset>
+		<legend>배경색을 변경해주세요</legend>
+		<input type="color" id="choiceColor">
+	</fieldset>
+</body>
+</html>

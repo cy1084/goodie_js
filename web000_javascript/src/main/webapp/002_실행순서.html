@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript의 실행 순서</title>
+
+<script type="text/javascript">
+	alert("임베디드 body 위에 선언 1");
+	console.log("1",document.getElementById("sample").value);
+</script>
+
+<script type="text/javascript" src="./js/js_002.js" defer="defer"></script>
+<!-- defer: 지연 실행/ 화면이 다 로드된 후 js 링크 실행 -->
+
+<script type="text/javascript">
+	alert("임베디드 body 위에 선언 2");
+</script>
+
+</head>
+<body>
+	<input type="text" id="sample" value="summer">
+	<div id="div_click">눌러보세요</div>
+</body>
+
+<script type="text/javascript">
+	alert("임베디드 body 밑에 선언 3");
+	/*다시보기*/
+	console.log("3",document.getElementById("sample").value);	
+
+</script>
+
+</html>

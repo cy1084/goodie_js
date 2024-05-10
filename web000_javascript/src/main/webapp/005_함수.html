@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수의 이해</title>
+<script type="text/javascript" src=./js/js_005.js></script>
+</head>
+<body>
+	<h2>함수의 종류</h2>
+	<p onclick="function01()">1. 명시적 함수</p>
+	<p onclick="function02()">2. 익명적 함수</p>
+	<p onclick="function03()">3. 함수 리터럴</p>
+	
+	<h3 onclick="argumentsValue('오전','오후','점심')">arguments 속성</h3>
+
+	<fieldset>
+		<legend>for문을 사용한 검색 및 출력</legend>
+		<pre>
+			1. 현재 HTML에서 p tag로 탐색해 본다
+			2. 탐색된 p Element의 콘텐츠(context와 innerHTML)를 확인해 본다
+			3. 향상된 for문인 in으로 확인해 본다
+			4. 향상된 for문인 of로 확인해 본다
+		</pre>
+		<button onclick="pPrint()"> p태그 탐색</button>
+	</fieldset>
+	
+	<hr>
+	<h1>클로저(함수리턴)</h1>
+	<label for="am">오전수업</label>
+	<input type="text" id="am">
+	<input type="button" value="오전" onclick="amEdu(this.value)">
+	<!-- this.value => 오전 출력 -->
+	
+	<label for="pm">오후수업</label>
+	<input type="text" id="pm">
+	<input type="button" value="오후" onclick="amEdu(this.value)">
+	
+	<button onclick="closureTest()"> 클로저함수</button>
+</body>
+</html>

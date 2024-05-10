@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript 변수</title>
+<script type="text/javascript" src="./js/js_003.js"></script>
+</head>
+<body>
+   <h1>변수의 이용</h1>
+   <button onclick="variable_scope()">
+      변수의 사용 영역(scope)
+   </button>
+   
+   <dl>
+      <dt>변수의 선언규칙(식별자/identifier)</dt>
+      <dd>1. 대소문자를 구분</dd>
+      <dd>2. 영문, $, _로 시작</dd>
+      <dd>3. 영문, $, _를 포함할 수 있고, 그 외의 특수문자는 허용되지 않음</dd>
+      <dd>4. 키워드 및 예약어는 사용이 불가능하다</dd>
+      
+      <dt>변수의 범위</dt>
+      <dd>
+         1. 전역변수(global): window객체에 포함되는 변수.
+         다른 함수들에서 공용으로 사용할 수 있다 <br>
+         값이 유지됨
+         <button onclick="global_variable()">전역변수 확인</button>
+      </dd>
+      <dd id="v1"></dd>
+      <dd>
+         2. 지역변수: 함수나 객체에서 선언되면 실행이 종료되어 사라짐(let, const : ES6문법) <br>
+         <button onclick="local_scope()">지역 스코프</button>
+         <button onclick="local_variable()">지역 변수</button>
+      </dd>
+      <dd id="v2"></dd>
+      
+      <dt>변수의 선언과 저장</dt>
+      <dd>1. var/let의 키워드를 사용하여 변수</dd>
+      <dd>2. const 키워드를 사용하여 변수</dd>
+      <dd>
+         3. javascript에서 변수의 타입은 동적변수로 되어 있다
+         <button onclick="variable_type()">변수의 선언과 저장</button> 
+      </dd>
+   </dl>
+   
+   <fieldset>
+      <legend>javascript 타입의 종류</legend> <!-- 암기! -->
+      <ul>
+         <li>문자(string)</li>
+         <li>숫자(number)</li>
+         <li>논리(boolean)</li> 
+         <li>널(object/null)</li>
+         <li>객체(object/array)</li>
+         <li>함수(function)</li>
+      </ul>
+   </fieldset>   
+   
+   <fieldset>
+      <legend>global 함수의 재선언</legend>
+      <div>
+         
+      </div>
+   </fieldset>
+</body>
+</html>
+
+
+
