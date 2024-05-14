@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜 객체</title>
+<script type="text/javascript" src="./js/js_014.js"></script>
+</head>
+<body>
+	<div>
+		<input type="date" id="day">
+	</div>
+	<ol>
+		<li>
+			오늘 날짜
+			<span id="nowDay"></span>
+			<button>오늘 날짜</button>
+		</li>
+		<li>
+			특정 날짜
+			<span id="specifyDay"></span>
+			<input type="date" id="inputDate" value="2024-01-01">
+			<button>특정 날짜</button>
+		</li>
+		<li>
+			결과 날짜
+			<label for="dates">지정 날짜</label>
+			<input type="date" id="dates" size="30">
+			<br>
+			<label for="inputD">경과일</label>
+			<input type="number" id="inputD" size="30">
+			<br>
+			<label for="resultDate">경과 후 날짜</label>
+			<input type="text" id="resultDate">
+			<button>경과 날짜 출력</button>
+		</li>
+		
+		<li>
+			D-DAY
+			<label for="dates1">지정 날짜</label>
+			<input type="date" id="dates1" size="30" value="2023-12-25">
+			<br>
+			<label for="inputDate1">수료 날짜</label>
+			<input type="date" id="inputDate1">
+			<br>
+			<input type="text" id="result1" readonly>
+			<button>남은 일수 출력하기</button>
+		</li>
+	</ol>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>부모(opener)에 의해 열린 창</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var parentValue = opener.document.getElementById("weather").textContent; //부모의 값 가져옴
+		console.log(parentValue);
+		document.getElementById("sendValue").value = parentValue; //부모의 값 자식의 창에 전달
+	}
+</script>
+</head>
+<body>
+	<!--
+		현재 보고 있는 html=> document
+		child 창에서 부모의 html => opener.document 
+	 -->
+	<input type="text" name="sendValue" id="sendValue">
+	<input type="button" value="부모에게 값 전달" onclick="sendParent()">
+	<input type="button" value="창닫기" onclick="self.close()">
+
+</body>
+<!-- 회원 관련해선 회원 아이디 확인 기능 -->
+<script type="text/javascript">
+	function sendParent() {
+		var childValue = document.getElementById("sendValue").value;
+		opener.document.getElementById("weather").innerHTML = 
+			`<span style='color:lime'>${childValue}</span>`;
+			
+			if(confirm("자식창을 닫을까요?")){
+				self.close();
+			}
+	}
+</script>
+</html>

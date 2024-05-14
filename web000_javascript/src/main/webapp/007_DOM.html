@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 탐색 방법</title>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  <!-- 남의 cdn은 위에다! -->
+<script type="text/javascript" src="./js/js_007.js"></script>
+</head>
+
+<body>
+	<fieldset>
+	 	<legend>쿼리 셀렉터(Query Selector)</legend>
+	 	<p onclick="searchQS()" id="query1">
+	 		쿼리 셀렉터는 css에서 사용했던 #id, .class, tag를 사용하고 NodeList
+	 	</p>
+	 	<p onclick="searchQSjQuery()" id="query2">
+	 		쿼리 셀렉터는 css에서 사용했던 #id, .class, tag를 사용하고 NodeList
+	 	</p>	 	
+	</fieldset>
+	
+	<fieldset>
+		<legend>id를 통한 검색</legend>
+		<p onclick="searchId()" id="testId" >
+			Element를 id를 검색해서 탐색하는 방법<br>
+			id가 여러개인 경우 무조건 첫번째 id만 탐색된다.			
+		</p>
+	</fieldset>
+	
+	<fieldset>
+		<legend>name을 통한 검색</legend>
+		<p>
+			같은 name은 여러개(nodeList) 형태이다.
+			<div>
+				<table border="1">
+			 		<!-- col 그룹: 미리 크기 지정 -->
+					<col style="width:50px">
+					<col style="width:300px">
+					<col style="width:100px">
+					<thead>
+						<td><input type="checkbox" id="allcheck" onclick="checkAll(this.checked)"></td>
+						<td>제목</td>
+						<td>내용</td>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" name="chk"></td>
+							<td>날씨</td>
+							<td>맑음</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="chk"></td>
+							<td>국제유가</td>
+							<td>모름</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="chk"></td>
+							<td>크리스마스</td>
+							<td>코카콜라</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>	
+		</p>	
+	</fieldset>
+	
+	<fieldset>
+		<legend>tagName을 통한 검색</legend>
+		<p>
+			화면에 같은 tagName으로 NodeList<br>
+			document.getElementByTagName()
+		</p>
+	</fieldset>
+	
+
+</body>
+</html>

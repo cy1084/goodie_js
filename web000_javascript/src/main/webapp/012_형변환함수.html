@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형변환 함수</title>
+<script type="text/javascript" src="./js/js_012.js"></script>
+</head>
+<body>
+	<h1>1. 숫자의 형변환 Number()</h1> <!-- new Number() x -->
+	<p>문자형 숫자를 number type으로 변환할 때 사용</p>
+	<input type="number" min="0" max="10" id="num"> <!-- type은 number지만 string임 -->
+	<button onclick="numTest()">숫자 변환</button>
+	
+	<hr>
+	<h1>2. 정수의 형변환(parseInt())</h1>
+	<p>무조건 숫자로 변경, 정수로만 변환, NaN 꼭 확인!</p>
+	<input type="text" id="valnum">
+	<button onclick="intNum()">정수로 변환</button>
+	
+	<hr>
+	<h1>3. 실수의 형변환(parseFloat())</h1>
+	<p>문자형 실수를 실수형으로 변환</p>
+	<input type="text" id="valFloat">
+	<button onclick="floatNum()">실수로 변환</button>
+	
+	<hr>
+	<h1>검증 함수 eval</h1>
+	<p>문자열에 연산이 포함되어 있다면 코드를 읽어서 연산처리해줌</p>
+	<input type="text" name="evalValue" placeholder="ex) 1+2">
+	<button onclick="calculation()">계산기</button>
+	<span></span>
+</body>
+</html>

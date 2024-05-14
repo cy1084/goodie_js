@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트로 만드는 계산기</title>
+<script type="text/javascript" src="./js/js_calculator.js"></script>
+<style type='text/css'>
+
+</style>
+</head>
+<body>
+ 
+	<div class="container">
+		<table border="1">
+			<tr>
+				<td colspan="4">
+					<input type="text" id="display">
+				</td>	
+			</tr>
+			<tr>
+				<td colspan="4">
+					<input type="text" id="result">
+				</td>				
+			</tr>
+			<tr>
+				 <td colspan="3">AC</td>
+				 <td onclick="operator()">/</td>
+			</tr>
+			<tr>
+				<td>7</td>	
+				<td>8</td>
+				<td>9</td>
+				<td onclick="operator()">*</td>
+			</tr>
+			<tr>
+				<td>4</td>	
+				<td>5</td>
+				<td>6</td>
+				<td onclick="operator()">-</td>	
+			</tr>
+			<tr>
+				<td>1</td>	
+				<td>2</td>
+				<td>3</td>
+				<td onclick="operator()">+</td>	
+			</tr>
+			<tr>
+				<td colspan="2">0</td>
+				<td onclick=>.</td>
+				<td onclick="calculate()">=</td>
+			</tr>
+		</table>
+
+	</div>
+
+	
+</body>
+</html>
