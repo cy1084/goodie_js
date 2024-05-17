@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>form/servlet 연습</title>
+<script type="text/javascript" src="./js/js_016.js"></script>
+</head>
+
+<body>
+	<!--
+		HTML DTD의 문법에 의해 작성하고 Browser에 전송되면 
+		문서의 DOCTYPE에 의해 번역해서 보여지게 된다.
+		
+		Server(ip, port)에 값을 전송=> WAS(HttpServlet)-> HTTP 프로토콜 필요
+		 
+		값을 서버에 전송하기 위해서 작성하는 영역: <form>
+		form 요소는 <form></form>에 작성되어야 한다
+		
+		<input type='submit'>에 의해서 action 속성의 요청으로 server/ws에 전송
+		: server에 전송 시에는 deployment descriptor의 설정(web.xml)의 url-pattern에 매핑되어 동작
+		: ws 페이지(wepapp에 있는 파일)
+		
+		HTML(Hyper Text Markup Language) vs XML(eXtensible Markup Language) 차이
+		HTML: well-form
+		XML: valid & well-formed
+	 -->
+	 
+	 <h2> protocol 처리 방식</h2>
+	 <fieldset>
+	 	<ul>
+	 		<li>a, location 등 주소에 보이는 것들 GET 방식</li>
+	 		<li>
+	 			<a href="http://search.naver.com/search.naver?query=금천구맛집">a 태그</a>
+	 			<!-- url주소/전송 요청되는 서블릿 이름?key=value -->
+	 		</li>
+	 		<li>
+	 			<button onclick="location.href='http://search.naver.com/search.naver?query=금천구맛집'">버튼</button>
+	 		</li>
+	 		<li>
+	 		<!-- POST 사용하는 경우 x-www-form-urlencoded: 많은 글자, data 전송할 때 -->
+	 		
+	 			<form action="http://search.naver.com/search.naver?query=금천구맛집" method="get">
+	 				<input type="text" name="query" value="금천구맛집">
+	 				<!-- name=> 주소에 key 이름! -->
+	 				
+	 				<input type="submit" value="FORM Submit">
+	 				<button>버튼</button>
+	 			</form>
+	 		</li>
+	 	</ul>
+	 </fieldset>
+	 
+	 <fieldset>
+	 	<legend>테스트 WAS를 사용하여 form의 form 요소를 통한 값 전달</legend>
+	 	<div>
+	 		<form action="./coffeeOrder.servlet" method="get">
+	 			<input type="submit" value="전송">
+	 			<!-- 
+	 				1)select > option 중에서 선택된 하나의 value만을 전송시킴 
+	 				  option(selectedIndex)이 선택되어 있지 않다면 기본 첫번째 option이 선택됨
+	 			-->
+	 			<div>커피 선택</div>
+	 			<select name="beans">
+	 				<option value="kenyaAA" selected="selected">케냐AA</option>
+	 				<option value="Arabica">아라비카</option>
+	 				<option value="etiopia">에티오피아</option>
+	 			</select>
+	 			
+	 			<div>
+	 				<label>유형</label>
+	 				<p>
+	 					<!-- radio: 여러 개의 같은 name을 가진 묶음 중 하나 -->
+	 					<input type="radio" name="beanType" value="typeA">탄거<br>
+	 					<input type="radio" name="beanType" value="typeB" checked="checked">덜 탄거<br>
+	 					<input type="radio" name="beanType" value="typeC">많이 탄거<br>
+	 				</p>
+	 			</div>
+	 			
+	 			<div>
+	 				<label>개수</label>
+	 				<input type="number" name="bags" min="1" max="4" value="1">
+	 			</div>
+	 			
+	 			<div>
+	 				<label>날짜</label>
+	 				<input type="date" name="date" value="2024-05-16">
+	 				
+	 			</div>
+	 			<div>
+	 				<label>추가 옵션 checkbox</label>
+	 				<input type="checkbox" name="extra" value="none">포장 안함<br>
+	 				<input type="checkbox" name="extra" value="bag">가방<br>
+	 				<input type="checkbox" name="extra" value="box">박스<br>
+	 			</div>
+	 			<div>
+	 				<label>색상</label>
+	 				<input type="color" name="color"><br>
+	 				<input type="tel"><br>
+	 				<input type="password"><br>
+	 			</div>
+	 		</form>
+	 		
+	 	</div>
+	 </fieldset>
+	 
+	 <hr>
+	 <div>
+	 	<h2>요구사항</h2>
+	 	<!-- form 안에 form x -->
+	 	<form action="#" id="frm" name="was">
+	 		<textarea rows="5" cols="40" name="comment" id="txt"></textarea>
+	 	</form>
+	 	<button onclick="txtArea()">내용 전송</button>
+	 	<input type="submit" value="submit">
+	 	<!-- form 안에서만 submit 동작 -->
+	 </div>
+	 
+</body>
+</html>

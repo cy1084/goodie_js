@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM(Document Object Model) 탐색(속성)</title>
+<!-- !!!!!!!!!!!!! dom 탐색 매우 중요 !!!!!!!!!!!!! -->
+<!-- 
+	정적 생성: 이미 블럭을 만들어놓고 눈에 보이게, 보이지 않게(none)만 조작하는 것
+	ex) 댓글을 달면 답글 버튼이 생성되고 답글 textarea 생성
+	
+	동적 생성: 주문 시스템에서 많이 사용/ 
+	ex) 라면을 몇 개 추가할지 모르는데, 추가할 때마다 하나씩 밑에 붙음..append
+-->
+
+<script type="text/javascript" src="./js/js_023.js"></script>
+</head>
+<body>
+	<div>
+		<!-- 주석 -->
+		<p>Child01</p>
+		<p>Child02</p>
+		<p>Child03</p>
+	</div>
+	<button onclick="searchParent()">부모 탐색</button>
+	<button onclick="searchChilds()">자식 탐색</button>
+
+	<hr>
+
+	<h2>1. Child01 태그를 포함하는 상위 div의 배경색을 바꾸세요</h2>
+	<h2>2. 마지막 div에 포함된 Child04의 폰트 크기를 30pt로 변경하세요</h2>
+	<div id="btn" onclick="DOM_Example()">
+		<div>
+			<p>Child01</p>
+			<p>Child02</p>
+		</div>
+		<div>
+			<!-- 주석 -->
+			<p>Child03</p>
+			<p>Child04</p>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>체크박스</title>
+<link rel="stylesheet" href="./css/js_019.css">
+<script type="text/javascript" src="./js/js_019.js"></script>
+</head>
+<body>
+	<div id="colorBox">
+		<div id="red">빨강</div>
+		<div id="blue">파랑</div>
+		<div id="yellow">노랑</div>
+		<div id="green">초록</div>
+	</div>
+	
+	<div id="base">
+		<input type="checkbox" id="allCheck" onclick="allSelect(this.checked)">전체 선택<br>
+		<!-- checkbox는 checked라는 상태로 가져와야 함 -->		
+		<input type="checkbox" name="chk" value="red">빨강<br>
+		<!-- value를 가져가서 id를 탐색해서 색깔을 매치 -->
+		<input type="checkbox" name="chk" value="blue">파랑<br>
+		<input type="checkbox" name="chk" value="yellow">노랑<br>
+		<input type="checkbox" name="chk" value="green">초록<br>
+		
+		<input type="button" value="색 선택" onclick="selColor()">
+		<input type="button" value="초기화" onclick="clearDiv()">
+	</div>
+</body>
+</html>

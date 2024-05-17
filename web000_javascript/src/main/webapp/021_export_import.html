@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript의 export와 import</title>
+</head>
+<body>
+<!-- ECS7 문법! 이 코드만 외우고 있기! 나중에 리액트에서 활용 -->
+	<fieldset>
+		<legend>js_021.js의 module 함수 사용</legend>
+		<div>
+			<button id="module01">이름/나이 전송</button>
+		</div>
+	</fieldset>
+	
+	<!-- js에서 export 한 module 가져와 쓰기 위해 type="module" -->
+	<script type="module">
+		import { message, name, age, insa} from './js/js_021.js';
+
+		//클릭 이벤트 핸들러에서 name과 age 변수를 새로 정의하여 message 함수를 호출
+		document.getElementById("module01").addEventListener("click",function(){
+			//name과 age 새로운 변수 설정
+			let name='한국인';
+			let age='100';
+			alert(message(name, age)); 
+			//message 함수는 js 파일에서 가져온 함수
+		});
+
+		// 모듈에 있던 원래 값 호출
+		console.log(`${name}의 나이는 ${age} 입니다.`);
+
+		// insa 클래스의 인스턴스를 생성하여 greeting을 출력
+		let g=new insa("길동이");
+		console.log(g.greeting);
+
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>유효성 처리와 submit</title>
+</head>
+<body>
+	<form action="./" id="loginForm" onsubmit="return submitEvent();">
+		<input type="text" id="id" placeholder="아이디">
+		<input type="text" id="pw" placeholder="비밀번호">
+		<input type="submit" value="로그인">
+	</form>
+	
+	<script type="text/javascript">
+	function submitEvent(){
+		return false;
+	}
+	
+	/*
+		document.getElementById("loginForm").addEventListener('submit',function(event){
+			//유효성 검사 후 propagation
+			var id=document.getElementById("id");
+			var pw=document.getElementById("pw");
+			
+			if(!id.value || !pw.value){
+				alert("아이디와 비밀번호를 모두 입력해주세요");
+				event.preventDefault();//html의 action 이벤트를 동작 정지시키는 것
+			}else{
+				// -----------서버 전송 코드
+				
+			}
+		});
+	
+	
+	
+	*/
+	</script>
+</body>
+</html>

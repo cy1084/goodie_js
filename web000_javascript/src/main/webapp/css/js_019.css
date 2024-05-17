@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+#colorBox {
+	width: 320px;
+	height: 320px;
+	position: relative;
+	border: 1px dotted chocolate;
+	padding: 5px;
+}
+
+#colorBox>div {
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	position: absolute; /* (0,0)으로 뭉침 */
+}
+
+#blue {
+	right: 0px;
+}
+
+#yellow {
+	bottom: 0px;
+}
+
+#green {
+	right: 0px;
+	bottom: 0px;
+}

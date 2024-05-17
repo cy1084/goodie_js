@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>팝업창 만들기(부모화면)</title>
+<style type="text/css">
+	#regist{
+		border: 2px double orange;
+		border-radius: 15px;
+		background-color: tomato;
+		padding: 20px;
+		position: absolute; /*(0,0)으로*/
+		top: 200px;
+		left: 400px;
+		display: none; /*사용자 입장에선 처음엔 안보이다가 '회원가입 다이얼로그창' 누르면 보임*/
+		
+	}
+</style>
 <script type="text/javascript" src="./js/js_015.js"></script>
 </head>
 <body>
@@ -19,10 +32,49 @@
 			<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
 			<span id="guide" style="color:#999;display:none"></span>
 			<input type="text" id="sample4_detailAddress" placeholder="상세주소">
-			<input type="text" id="sample4_extraAddress" placeholder="참고항목">
-			
+			<input type="text" id="sample4_extraAddress" placeholder="참고항목">			
 		</div>
 	</fieldset>
+	<hr>
+	<h2>model DIV 만들기</h2>
+	<button name="btn-1" onclick="registForm()">회원가입 다이얼로그창</button>
+	<div id="regist">
+		<!-- 
+			화면에 작성된 form 요소(input)를 서버로 전송 <form> 영역 
+			전송 방식(프로토콜:GET, POST...)=> javax.Servlet.*
+			전송할 땐 key, value 형식으로 넘어감-> form 요소에 name을 반드시 작성!
+		-->
+		<form action="./regist.do" method="post">
+			<table>
+				<caption>가입 정보 입력 화면</caption>
+				<tbody>
+					<tr>
+						<th>아이디</th>
+						<td>
+							<input type="text" id="id" name="id" onclick="idChk()" readonly required>
+							<!-- readonly: 읽기만 -->
+							<!-- required: 값을 서버로 전송할 때 유효성 검사 -->
+							<input type="button" value="아이디 체크" onclick="idCheck()">
+						</td>
+					</tr>
+					<tr>
+						<th>비밀번호</th>
+						<td>
+							<input type="password" name="pwd" required="required">
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2" style="text-align:center;">
+							<input type="submit" value="회원가입">
+							<input type="button" value="취소" onclick="cancel()">
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</div>
 
 </body>
 

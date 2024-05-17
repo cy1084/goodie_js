@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 생성 삭제</title>
+<script type="text/javascript" src="./js/js_025.js"></script>
+</head>
+<body>
+	<input type="radio" name="rdoBtn" value="img01.png">이상해씨1<br>
+	<input type="radio" name="rdoBtn" value="img02.png">이상해씨2<br>
+	<input type="radio" name="rdoBtn" value="img03.png">이상해씨3<br>
+	<button onclick="createImage()">이미지 생성하기</button>
+	
+	<hr>
+	<button onclick="createRemove()">이미지 삭제하기</button>
+<!-- 	<div id="imgView"><img alt="포켓몬" src=""></div> -->
+	<div id="imgView">
+		<img alt="포켓몬" src="">
+		<img alt="포켓몬" src="./img/img01.png">
+		<img alt="포켓몬" src="./img/img03.png">
+	</div>
+</body>
+</html>

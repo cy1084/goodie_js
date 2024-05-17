@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select</title>
+<script type="text/javascript" src="./js/js_020.js"></script>
+</head>
+<body>
+	<!--
+		radio, checkbox는 checked를 통해서만 상태 확인 가능
+		
+		select
+		1) selected: 선택된 자식태그(option)
+		2) selectIndex: 선택된 자식태그의 index 번호
+		3) options: select 태그 내의 모든 option 태그를 탐색한 것 
+	 -->
+
+	<h2>가장 먹고 싶은 음식은?</h2>
+	<select name="food" onchange="showFood()">
+		<!-- onchange(): 값이 변하는 것 -->
+		<option value="">==선택==</option>
+		<option value="짜장면">짜장면</option>
+		<option value="삼겹살">삼겹살</option>
+		<option value="돈부리">돈부리</option>
+		<option value="해장국">해장국</option>
+	</select>
+	<hr>
+	<select name="food" multiple="multiple" size="5">
+	<!-- multiple: 목록 나오는 것, 5개까지 -->
+		<option value="">==선택==</option>
+		<option value="짜장면">짜장면</option>
+		<option value="삼겹살">삼겹살</option>
+		<option value="돈부리">돈부리</option>
+		<option value="해장국">해장국</option>
+	</select>
+	<input type="button" value="음식 선택" onclick="showFood2()">
+	<hr>
+	<div id="printFood"></div>
+	<textarea id="areaFood" rows="5" cols="50"></textarea>
+	<div id="divFood"></div> 
+
+</body>
+</html>

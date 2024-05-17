@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript의 export와 import</title>
+</head>
+<body>
+	<!-- 외부에서 생성되어 있는 export를 사용할 때는 타입이 module로 선언되어 있어야 함! -->
+	<script type="module">
+	//사용할 외부 javascript 파일을 연결(import),
+	//반드시 export 된 이름을 사용해야 함
+	import MyClass from './js/js_022.js';
+	//module을 사용할 땐 ; 필수
+
+	//import된 javascript의 Class를 생성(Constructor)
+	//생성자- 모두 const로!
+	const myObject=new MyClass("헬로우");
+	myObject.greet();
+</script>
+</body>
+</html>

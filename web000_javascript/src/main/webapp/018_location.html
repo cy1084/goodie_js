@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location 객체</title>
+</head>
+<body>
+	<!-- 
+		화면의 흐름을 제어하는 객체
+		<a href="#"></a> => javascript location.jref="#"
+		#는 현재 자신의 html 	ex) #id는 해당 html의 id 속성의 이름으로 이동하게 됨
+	-->
+	<button onclick="locationFn()">javascript 이동</button>
+	<script type="text/javascript">
+		function locationFn(){
+			//값 형태로 대입
+			location.href="http://www.naver.com";
+			
+			//위와 같음. 함수형으로 실행
+			location.assign("http://www.naver.com");
+			
+			//뒤로가기 불가, 캐쉬삭제 코드(개인 정보 삭제할 때 사용)
+			location.replace("http://www.naver.com");
+		}
+	</script>
+
+</body>
+</html>

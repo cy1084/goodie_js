@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아이디 중복 검사 팝업창</title>
+<script type="text/javascript">
+	var ids=["스위스","토마토","기러기","인도인","우영우"];
+	
+	function chkConfirm(){
+		//화면에서 입력한 값
+		var id=document.getElementById("id").value;
+		//화면에서 메시지 출력
+		var msgDiv=document.getElementsByTagName("div")[0];
+		
+		if(ids.indexOf(id) != -1){ // 값이 있으면
+			msgDiv.innerHTML="<b><style='color:red';>아이디가 존재합니다.</b>";
+		}else{
+			msgDiv.innerHTML="<b><style='color:blue';>사용할 수 있는 아이디 입니다.</b>"
+								+"<input type='button' value='사용' onclick=\"useId('"+id+"')\" >";
+								<!--onclick ~ 뒤에 이거 뭐야.. function 명(id 값..)-->
+		}		
+	}
+	
+	//전송되는 값이 문자인 경우는 반드시 '' 혹은 "" 로 묶여 있어야 함-> 아니면 변수로 인식하여 undefined 됨
+	//숫자는 상관 없음
+	function useId(val){
+		opener.document.getElementById("id").value=val;
+		opener.document.getElementById("id").onclick="";
+		self.close();
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>아이디</th>
+			<td><input type="text" id="id"> <!-- 메시지 영역 -->
+				<div></div></td>
+		</tr>
+		<tr>
+			<th colspan="2"><input type="button" value="중복 확인"
+				onclick="chkConfirm()"> <input type="button" value="취소"
+				onclick="self.close()"></th>
+
+		</tr>
+	</table>
+</body>
+</html>

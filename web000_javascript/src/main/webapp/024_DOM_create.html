@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Element의 생성</title>
+<!-- 뭔소리여.............. -->
+<script type="text/javascript" src="./js/js_024.js"></script>
+</head>
+<body>
+	<ul>
+		<li>엘리먼트의 생성		: createElement("태그명") </li>
+		<li>속성 객체의 생성	: createAttribute("속성명")</li>
+		<li>콘텐츠(text) 생성	: createTextNode("내용")</li>
+		<li>속성 추가			: setAttributeNode("속성") / setAttribute("속성","속성값")</li>
+	</ul>
+	<button onclick="elementCreate()">Element 동적 생성</button>
+	<button onclick="show()">show</button>
+	
+	<h2>정적 HTML의 display 처리</h2>
+	<div id="loc2">
+		<div style='border:1px solid tomato;'>안녕하세요 동적 HTML 입니다.</div>	
+	</div>
+	<hr>
+	<h2>동적 HTML의 생성</h2>
+	<div id="loc">
+		
+	</div>
+</body>
+</html>

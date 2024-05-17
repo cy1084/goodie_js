@@ -5,4 +5,13 @@
     <welcome-file>001_intro.html</welcome-file>
     
   </welcome-file-list>
+  <servlet>
+  	<servlet-name>CoffeeOrder</servlet-name>
+  	<servlet-class>com.min.edu.controller.CoffeeOrderController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CoffeeOrder</servlet-name>
+  	<url-pattern>/coffeeOrder.servlet</url-pattern>
+  	<!-- 서버 요청 /로 -->
+  </servlet-mapping>
 </web-app>
