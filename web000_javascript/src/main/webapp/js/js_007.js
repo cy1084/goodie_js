@@ -4,7 +4,7 @@
  	
 	  selector 방식
 	  - css 선택자
-	  id, name, tagName=>select 속성 
+	  id, name, tagName=> select 속성 
  */
 
 function searchQS() {

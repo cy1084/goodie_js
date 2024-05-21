@@ -33,6 +33,7 @@ function confirmTest() {
 }
 
 function swalTest() {
+	//부트스트랩에서 가져온 것
 	Swal.fire({
 		title: "<strong>SweetAlert 깔끔해요~!</strong>",
 		icon: "success",

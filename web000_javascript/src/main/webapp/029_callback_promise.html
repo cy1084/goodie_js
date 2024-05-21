@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Callback 기능과 Promise 객체</title>
+</head>
+<script type="text/javascript">
+	const condition = true;
+	/*
+	내부에서 실행된 결과를 callback으로 반환
+	성공 했다면 success
+	실패 했다면 reject로 구분하여 처리
+	ex) axios, fetch
+	*/
+	const promise = new Promise((resolve, reject) =>{
+								//(resolve, reject) 두 개의 값 넘겨줌
+									let a=1+1;
+									if(a==2){
+										resolve("success");
+									}else{
+										reject("fail");
+									}
+	});
+	console.log(promise);
+	promise
+		.then((msg)=>{ //성공했다면 then으로 값을 가져옴
+			console.log("this is then"+msg);
+		})
+		.catch((msg)=>{ //실패했다면 catch로
+			console.log("this is catch"+msg);
+		});
+		
+</script>
+<body>
+
+</body>
+</html>
+<!-- callback: 메소드가 실행되면서 중간중간 실행되는 것 -->
+<!-- await async: callback 함수가 완료된 후 동작 -->

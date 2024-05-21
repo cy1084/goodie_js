@@ -13,10 +13,16 @@ function createImage() {
 	var img = document.createElement("img"); //<img>
 	img.setAttribute("src", rdoBtnValue); //<img src="./img/img01.png">
 
+	img.onclick=removeImg;
+	
 	//붙여넣을 위치 탐색
 	var div = document.getElementById("imgView");
 	div.appendChild(img); //태그 객체 붙임, 상위 태그에 붙여야 그 안의 속성으로....됨...
 
+}
+function removeImg(){
+	this.parentNode.removeChild(this);
+	//동적 생성된 객체(태그)를 삭제하기 위해서는 상위노드(div)에 포함되어 있는 child를 지워야 함
 }
 
 function createRemove() {
